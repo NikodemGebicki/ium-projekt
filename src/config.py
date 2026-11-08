@@ -1,7 +1,11 @@
+import os
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+from dotenv import load_dotenv
 
-DATA_PATH = ROOT / "data" / "wine.csv"
-TEST_SIZE = 0.2
-RANDOM_SEED = 42
+ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT / ".env")
+
+DATA_PATH = ROOT / os.getenv("DATA_PATH", "data/wine.csv")
+TEST_SIZE = float(os.getenv("TEST_SIZE", 0.2))
+RANDOM_SEED = int(os.getenv("RANDOM_SEED", 42))
