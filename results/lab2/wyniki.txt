@@ -1,0 +1,6 @@
+Model         | Accuracy CV      | F1 macro CV      | Acc. test | Trening [ms] | Czas CV [s] | Linie kodu
+---------------------------------------------------------------------------------------------------------
+scikit-learn  | 0.9887 ± 0.0138  | 0.9886 ± 0.0140  | 0.9722    | 4.7          | 0.027       | 47        
+PyTorch       | 0.9775 ± 0.0213  | 0.9772 ± 0.0219  | 0.9722    | 1059.1       | 1.138       | 86        
+
+Wniosek: Różnica średniej dokładności wynosi 0.0113 i mieści się w odchyleniu standardowym, więc oba modele można uznać za porównywalne. Przy podobnej jakości prostszy i szybszy w treningu jest pipeline scikit-learn.
